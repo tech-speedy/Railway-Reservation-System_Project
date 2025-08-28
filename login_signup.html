@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="WhatsApp Image 2025-08-23 at 11.02.52 PM.jpeg">
+    <title>Sign Up - RailwayConnect</title>
+    <!-- Use Tailwind CSS for a modern, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-md">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Create Your Account</h2>
+        <p class="text-center text-gray-500 mb-8">Join us to book your train tickets effortlessly.</p>
+
+        <form>
+            <div class="mb-4">
+                <label for="full-name" class="block text-gray-700 text-sm font-semibold mb-2">Full Name</label>
+                <input type="text" id="full-name" name="full_name" class="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Enter your name here" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Enter your email address" required>
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password</label>
+                <input type="password" id="password" name="password" class="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Create a password" required>
+            </div>
+            <div class="mb-6">
+                <label for="confirm-password" class="block text-gray-700 text-sm font-semibold mb-2">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm_password" class="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Retype password" required>
+            </div>
+            
+            <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-full hover:bg-indigo-700 transition duration-300">
+                Sign Up
+            </button>
+        </form>
+
+        <p class="text-center text-sm text-gray-500 mt-6">
+            Already have an account? 
+            <a href="login.html" class="text-indigo-600 font-semibold hover:underline">Login</a>
+        </p>
+    </div>
+
+</body>
+</html>

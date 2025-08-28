@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="WhatsApp Image 2025-08-23 at 11.02.52 PM.jpeg">
+    <title>Contact Us - GetSetReady</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-2xl">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Get In Touch</h2>
+        <p class="text-center text-gray-500 mb-8">We would love to hear from you. Please fill out the form below or use our direct contact details.</p>
+
+        <form>
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Full Name</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Type your name here" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Type your email address here" required>
+            </div>
+            <div class="mb-6">
+                <label for="message" class="block text-gray-700 text-sm font-semibold mb-2">Message</label>
+                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300" placeholder="Your message..." required></textarea>
+            </div>
+            
+            <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                Send Message
+            </button>
+        </form>
+
+        <div class="text-center mt-8 pt-8 border-t border-gray-200">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Or Contact Us Directly</h3>
+            <p class="text-gray-600 mb-2">Email: <a href="mailto:support@getsetready.com" class="text-indigo-600 font-semibold hover:underline">support@getsetready.com</a></p>
+            <p class="text-gray-600 mb-2">Phone: <a href="tel:+919876500000" class="text-indigo-600 font-semibold hover:underline">+91 98765 00000</a></p>
+            <p class="text-gray-600">Address: 123 Railway Road, Ticket Town, State 45678</p>
+        </div>
+    </div>
+
+</body>
+</html>
