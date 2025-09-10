@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="WhatsApp Image 2025-08-23 at 11.02.52 PM.jpeg">
+    <title>GetSetRide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation Bar -->
+    <header class="bg-white shadow-md rounded-b-xl">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <img src="WhatsApp Image 2025-08-23 at 11.02.52 PM.jpeg" alt="GetSetReady" class="h-10 w-10 mr-4 flex-shrink-0">
+                <span class="text-2xl font-bold text-gray-800">GetSetRide</span>
+            </a>
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8">
+                <a href="home.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Home</a>
+                <a href="features.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Features</a>
+                <a href="contact.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Contact</a>
+                <a href="login.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Login</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white rounded-b-xl shadow-lg">
+            <div class="flex flex-col p-4 space-y-2">
+                <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">Home</a>
+                <a href="features.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">Features</a>
+                <a href="contact.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">Contact</a>
+                <a href="login.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-white rounded-xl shadow-lg mx-4 md:mx-auto max-w-7xl mt-8 py-20 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 leading-tight">Your Journey Awaits</h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Discover the easiest way to book your railway tickets. Fast, reliable, and comfortable.
+            </p>
+            <a href="Booking.html" oneclick="checkLogin()" class="inline-block px-8 py-4 text-lg font-semibold text-white bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                Book Your Ticket Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Why Choose Us?</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    We offer a seamless booking experience with features designed for your convenience.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center transform hover:scale-105 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-indigo-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Fast Booking</h3>
+                    <p class="text-gray-600">
+                        Book your tickets in just a few clicks. Our system is optimized for speed.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center transform hover:scale-105 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-indigo-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.955a11.955 11.955 0 018.382 3.029m-5.618-4.016l-4.717 11.536M4.382 6.014A11.955 11.955 0 0012 21.045a11.955 11.955 0 007.618-2.992" />
+                    </svg>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Secure Payments</h3>
+                    <p class="text-gray-600">
+                        Your transactions are safe with our encrypted payment gateway.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center transform hover:scale-105 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-indigo-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 13l-3 3m0 0l-3-3m3 3V3m0 16h6" />
+                    </svg>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Instant Confirmation</h3>
+                    <p class="text-gray-600">
+                        Receive instant confirmation and real-time updates on your booking.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white rounded-t-xl shadow-md py-8 mt-8">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            <p>&copy; 2025 GetSetRide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    function checkLogin() {
+        // Here, you'll add the logic to check if a user is logged in.
+        // For now, let's use a simple placeholder.
+        const isLoggedIn = false; // Replace this with your actual login check
+
+        if (isLoggedIn) {
+            // If the user is logged in, redirect them to the booking page.
+            window.location.href = "Book_Your_Ticket_Now.html";
+        } else {
+            // If the user is not logged in, redirect them to the sign-up or login page.
+            // You can use the ID of your sign-up page here, which is likely signup-page.
+            window.location.href = "login.html";
+        }
+    }
+    </script>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

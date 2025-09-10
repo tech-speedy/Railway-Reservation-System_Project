@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="WhatsApp Image 2025-08-23 at 11.02.52 PM.jpeg">
+    <title>Domestic Trains - GetSetRide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-md rounded-b-xl">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="domestic_trains_ticket.html" class="flex items-center space-x-2">
+                <img src="WhatsApp Image 2025-08-23 at 11.02.52 PM.jpeg" alt="GetSetReady" class="h-10 w-10 mr-4 flex-shrink-0">
+                <span class="text-3xl font-bold text-gray-800">GetSetRide</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="home.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Home</a>
+                <a href="features.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Features</a>
+                <a href="contact.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Contact</a>
+                <a href="login.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Login</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="home.html" class="block py-2 text-gray-600 hover:text-indigo-600 transition duration-300">Home</a>
+            <a href="features.html" class="block py-2 text-gray-600 hover:text-indigo-600 transition duration-300">Features</a>
+            <a href="contact.html" class="block py-2 text-gray-600 hover:text-indigo-600 transition duration-300">Contact</a>
+            <a href="login.html" class="block py-2 text-gray-600 hover:text-indigo-600 transition duration-300">Login</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="bg-white rounded-xl shadow-md p-8 text-center max-w-2xl mx-auto">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Domestic Stations</h1>
+            <p class="text-gray-600 mb-8">Book your local train tickets for suburban cities.</p>
+
+            <form action="#" method="POST" class="space-y-6">
+                <div>
+                    <label for="city" class="block text-sm font-medium text-gray-700 text-left">City</label>
+                    <select id="city" name="city" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">Select a City</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="from-station" class="block text-sm font-medium text-gray-700 text-left">From Station</label>
+                    <input type="text" id="from-station" name="from-station" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter departure station">
+                </div>
+
+                <div>
+                    <label for="to-station" class="block text-sm font-medium text-gray-700 text-left">To Station</label>
+                    <input type="text" id="to-station" name="to-station" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter arrival station">
+                </div>
+
+                <button type="submit" class="w-full inline-block px-6 py-3 text-lg font-semibold text-white bg-indigo-600 rounded-full shadow-md hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                    Search Trains
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-white rounded-t-xl shadow-md py-8 mt-8">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            <p>&copy; 2025 GetSetRide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

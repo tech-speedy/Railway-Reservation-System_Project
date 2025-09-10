@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="WhatsApp Image 2025-08-23 at 11.02.52 PM.jpeg">
+    <title>Domestic Trains - GetSetRide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .train-card {
+            transition: all 0.3s ease;
+        }
+        .train-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-md rounded-b-xl">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="domestic_trains_ticket.html" class="flex items-center space-x-2">
+                <img src="WhatsApp Image 2025-08-23 at 11.02.52 PM.jpeg" alt="GetSetReady" class="h-10 w-10 mr-4 flex-shrink-0">
+                <span class="text-3xl font-bold text-gray-800">GetSetRide</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="home.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Home</a>
+                <a href="features.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Features</a>
+                <a href="contact.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Contact</a>
+                <a href="login.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Login</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="home.html" class="block py-2 text-gray-600 hover:text-indigo-600 transition duration-300">Home</a>
+            <a href="features.html" class="block py-2 text-gray-600 hover:text-indigo-600 transition duration-300">Features</a>
+            <a href="contact.html" class="block py-2 text-gray-600 hover:text-indigo-600 transition duration-300">Contact</a>
+            <a href="login.html" class="block py-2 text-gray-600 hover:text-indigo-600 transition duration-300">Login</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="bg-white rounded-xl shadow-md p-8 text-center max-w-2xl mx-auto">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Domestic Stations</h1>
+            <p class="text-gray-600 mb-8">Book your local train tickets for suburban cities.</p>
+
+            <form id="search-form" class="space-y-6">
+                <div>
+                    <label for="city" class="block text-sm font-medium text-gray-700 text-left">City</label>
+                    <select id="city" name="city" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">Select a City</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="from-station" class="block text-sm font-medium text-gray-700 text-left">From Station</label>
+                    <input type="text" id="from-station" name="from-station" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter departure station">
+                </div>
+
+                <div>
+                    <label for="to-station" class="block text-sm font-medium text-gray-700 text-left">To Station</label>
+                    <input type="text" id="to-station" name="to-station" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter arrival station">
+                </div>
+
+                <button type="submit" class="w-full inline-block px-6 py-3 text-lg font-semibold text-white bg-indigo-600 rounded-full shadow-md hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                    Search Trains
+                </button>
+            </form>
+        </section>
+
+        <section id="results-section" class="mt-12 hidden">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Available Trains</h2>
+            <div id="train-results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Train results will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white rounded-t-xl shadow-md py-8 mt-8">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            <p>&copy; 2025 GetSetRide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Train data
+        const trainData = {
+            Kolkata: [
+                { name: "Sealdah Shantipur Local", code: "KOL001", from: "Sealdah", to: "Shantipur", fare: "30" },
+                { name: "Shantipur Sealdah Local", code: "KOL002", from: "Shantipur", to: "Sealdah", fare: "30" },
+                { name: "Sealdah Bongaon Local", code: "KOL003", from: "Sealdah", to: "Bongaon", fare: "20" },
+                { name: "Bongaon Sealdah Local", code: "KOL004", from: "Bongaon", to: "Sealdah", fare: "20" },
+                { name: "Sealdah Bardhaman Local", code: "KOL005", from: "Sealdah", to: "Bardhaman", fare: "45" },
+                { name: "Bardhaman Sealdah Local", code: "KOL006", from: "Bardhaman", to: "Sealdah", fare: "45" },
+                { name: "Bardhaman Asansol Local", code: "KOL007", from: "Bardhaman", to: "Asansol", fare: "55" },
+                { name: "Asansol Bardhaman Local", code: "KOL008", from: "Asansol", to: "Bardhaman", fare: "55" },
+                { name: "Bardhaman Howrah Local", code: "KOL009", from: "Bardhaman", to: "Howrah", fare: "40" },
+                { name: "Howrah Bardhaman Local", code: "KOL010", from: "Howrah", to: "Bardhaman", fare: "40" }
+            ],
+            Bengaluru: [
+                { name: "Bengaluru Yeshwanthpur Local", code: "BLR001", from: "KSR Bengaluru City", to: "Yeshwanthpur", fare: "10" },
+                { name: "Yeshwanthpur Bengaluru Local", code: "BLR002", from: "Yeshwanthpur", to: "KSR Bengaluru City", fare: "10" },
+                { name: "Krishnarajapuram Yeshwanthpur Local", code: "BLR003", from: "Krishnarajapuram", to: "Yeshwanthpur", fare: "15" },
+                { name: "Yeshwanthpur Krishnarajapuram Local", code: "BLR004", from: "Yeshwanthpur", to: "Krishnarajapuram", fare: "15" },
+                { name: "Baiyyappanahalli Krishnarajapuram Local", code: "BLR005", from: "Baiyyappanahalli", to: "Krishnarajapuram", fare: "10" },
+                { name: "Krishnarajapuram Baiyyappanahalli Local", code: "BLR006", from: "Krishnarajapuram", to: "Baiyyappanahalli", fare: "10" },
+                { name: "Whitefield Baiyyappanahalli Local", code: "BLR007", from: "Whitefield", to: "Baiyyappanahalli", fare: "15" },
+                { name: "Baiyyappanahalli Whitefield Local", code: "BLR008", from: "Baiyyappanahalli", to: "Whitefield", fare: "15" }
+            ],
+            Chennai: [
+                { name: "Chennai Central Eginore Local", code: "CHE001", from: "Chennai Central", to: "Chennai Eginore", fare: "10" },
+                { name: "Eginore Central Local", code: "CHE002", from: "Chennai Eginore", to: "Chennai Central", fare: "10" },
+                { name: "Chennai Beach Eginore Local", code: "CHE003", from: "Chennai Beach", to: "Chennai Eginore", fare: "22" },
+                { name: "Eginore Beach Local", code: "CHE004", from: "Chennai Eginore", to: "Chennai Beach", fare: "22" },
+                { name: "Tambaram Eginore Local", code: "CHE005", from: "Tambaram", to: "Chennai Eginore", fare: "45" },
+                { name: "Eginore Tambaram Local", code: "CHE006", from: "Chennai Eginore", to: "Tambaram", fare: "45" },
+                { name: "Velachery Tambaram Local", code: "CHE007", from: "Velachery", to: "Tambaram", fare: "20" },
+                { name: "Tambaram Velachery Local", code: "CHE008", from: "Tambaram", to: "Velachery", fare: "20" }
+            ],
+            Mumbai: [
+                { name: "CST Dadar Local", code: "MUM001", from: "Chhatrapati Shivaji Terminus", to: "Dadar", fare: "10" },
+                { name: "Dadar CST Local", code: "MUM002", from: "Dadar", to: "Chhatrapati Shivaji Terminus", fare: "10" },
+                { name: "Andheri Dadar Local", code: "MUM003", from: "Andheri", to: "Dadar", fare: "10" },
+                { name: "Dadar Andheri Local", code: "MUM004", from: "Dadar", to: "Andheri", fare: "10" },
+                { name: "Kurla Andheri Local", code: "MUM005", from: "Kurla", to: "Andheri", fare: "10" },
+                { name: "Andheri Kurla Local", code: "MUM006", from: "Andheri", to: "Kurla", fare: "10" },
+                { name: "Borivali Kurla Local", code: "MUM007", from: "Borivali", to: "Kurla", fare: "20" },
+                { name: "Kurla Borivali Local", code: "MUM008", from: "Kurla", to: "Borivali", fare: "20" }
+            ],
+            Delhi: [
+                { name: "New Delhi Nizamuddin Local", code: "DEL001", from: "New Delhi", to: "Hazrat Nizamuddin", fare: "10" },
+                { name: "Nizamuddin New Delhi Local", code: "DEL002", from: "Hazrat Nizamuddin", to: "New Delhi", fare: "10" },
+                { name: "Anand Vihar Nizamuddin Local", code: "DEL003", from: "Anand Vihar Terminal", to: "Hazrat Nizamuddin", fare: "30" },
+                { name: "Nizamuddin Anand Vihar Local", code: "DEL004", from: "Hazrat Nizamuddin", to: "Anand Vihar Terminal", fare: "30" },
+                { name: "Sarai Rohilla Anand Vihar Local", code: "DEL005", from: "Delhi Sarai Rohilla", to: "Anand Vihar Terminal", fare: "35" },
+                { name: "Anand Vihar Sarai Rohilla Local", code: "DEL006", from: "Anand Vihar Terminal", to: "Delhi Sarai Rohilla", fare: "35" },
+                { name: "Shakur Basri Sarai Rohilla Local", code: "DEL007", from: "Shakur Basri", to: "Delhi Sarai Rohilla", fare: "25" },
+                { name: "Sarai Rohilla Shakur Basri Local", code: "DEL008", from: "Delhi Sarai Rohilla", to: "Shakur Basri", fare: "25" }
+            ]
+        };
+
+        // Form submission handler
+        document.getElementById('search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const city = document.getElementById('city').value;
+            const fromStation = document.getElementById('from-station').value.trim();
+            const toStation = document.getElementById('to-station').value.trim();
+            
+            if (!city) {
+                alert('Please select a city');
+                return;
+            }
+            
+            if (!fromStation || !toStation) {
+                alert('Please enter both from and to stations');
+                return;
+            }
+            
+            // Filter trains based on city and stations
+            const filteredTrains = trainData[city].filter(train => 
+                train.from.toLowerCase().includes(fromStation.toLowerCase()) && 
+                train.to.toLowerCase().includes(toStation.toLowerCase())
+            );
+            
+            displayResults(filteredTrains, fromStation, toStation);
+        });
+
+        // Display results function
+        function displayResults(trains, fromStation, toStation) {
+            const resultsSection = document.getElementById('results-section');
+            const trainResults = document.getElementById('train-results');
+            
+            if (trains.length === 0) {
+                trainResults.innerHTML = `
+                    <div class="col-span-full text-center py-8">
+                        <p class="text-gray-600">No trains found for the selected route.</p>
+                    </div>
+                `;
+            } else {
+                trainResults.innerHTML = trains.map(train => `
+                    <div class="train-card bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">${train.name}</h3>
+                        <p class="text-gray-600 mb-1"><span class="font-medium">From:</span> ${train.from}</p>
+                        <p class="text-gray-600 mb-1"><span class="font-medium">To:</span> ${train.to}</p>
+                        <p class="text-gray-600 mb-4"><span class="font-medium">Fare:</span> Rs. ${train.fare}</p>
+                        <button class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                `).join('');
+            }
+            
+            resultsSection.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
