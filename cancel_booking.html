@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="WhatsApp Image 2025-08-23 at 11.02.52 PM.jpeg">
+    <title>Cancel Booking - GetSetRide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-md rounded-b-xl">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="home.html" class="flex items-center space-x-2">
+                <img src="WhatsApp Image 2025-08-23 at 11.02.52 PM.jpeg" alt="GetSetRide" class="h-10 w-10 mr-4 flex-shrink-0">
+                <span class="text-2xl font-bold text-gray-800">GetSetRide</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="home.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Home</a>
+                <a href="features.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Features</a>
+                <a href="contact.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Contact</a>
+                <a href="login.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Login</a>
+            </div>
+            </nav>
+    </header>
+
+    ---
+
+    <section class="bg-white rounded-xl shadow-lg mx-4 md:mx-auto max-w-xl mt-12 p-8 md:p-12">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-red-600 mb-2">Cancel Your Booking</h1>
+            <p class="text-gray-600">Please enter the train number to proceed with cancellation.</p>
+        </div>
+
+        <form action="#" method="POST" class="space-y-6">
+            <div>
+                <label for="train-number" class="block text-lg font-medium text-gray-700 mb-2">
+                    Enter your train number:
+                </label>
+                <input 
+                    type="text" 
+                    name="train-number" 
+                    id="train-number" 
+                    placeholder="e.g., 12345"
+                    required
+                    class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-lg"
+                >
+            </div>
+
+            <div>
+                <button 
+                    type="submit" 
+                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-300 transform hover:scale-105"
+                >
+                    Cancel Booking
+                </button>
+            </div>
+        </form>
+    </section>
+
+    ---
+
+    <footer class="bg-white rounded-t-xl shadow-md py-8 mt-12">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            <p>&copy; 2025 GetSetRide. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
